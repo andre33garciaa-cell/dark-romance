@@ -321,8 +321,11 @@
                     let charIndex = 0;
 
                     function typeChar() {
-                        if (charIndex < line.length) {
-                            p.innerHTML += line.charAt(charIndex);
+                        if (charIndex < cleanText.length) {
+                            p.innerHTML += cleanText.charAt(charIndex);
+                            const tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = line;
+                            const cleanText = tempDiv.innerText;
                             charIndex++;
                             // Digita o caractere com a velocidade definida
                             setTimeout(typeChar, speed); 
